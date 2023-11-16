@@ -25,6 +25,6 @@ public class UserServiceImp implements UserService {
 
   @Override
   public Optional<User> getUserByUsername(String username) {
-    return Optional.empty();
+    return userRepository.findByUsername(username);
   }
 }

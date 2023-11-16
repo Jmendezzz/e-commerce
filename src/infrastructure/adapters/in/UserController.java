@@ -13,13 +13,13 @@ public class UserController {
   private final UserService userService = SingletonService.getInstance().userService;
   private final AuthenticationProvider authenticationProvider = new AuthenticationProvider();
 
-  public void registerUser(){
+  public void register(){
     System.out.println("Ingrese su nombre completo");
-    String fullName = sc.next();
+    String fullName = sc.nextLine();
     System.out.println("Ingrese su correo electronico");
-    String email = sc.next();
+    String email = sc.nextLine();
     System.out.println("Ingrese su contrasena");
-    String password = sc.next();
+    String password = sc.nextLine();
 
     User user = new User(fullName,email,password);
 
@@ -28,9 +28,9 @@ public class UserController {
 
   public boolean login(){
     System.out.println("Ingrese su correo electronico");
-    String username = sc.next();
+    String username = sc.nextLine();
     System.out.println("Ingrese su contrasena");
-    String password = sc.next();
+    String password = sc.nextLine();
     try{
       authenticationProvider.login(username,password);
       return true;
@@ -38,5 +38,8 @@ public class UserController {
       System.out.println(ex.getMessage());
       return false;
     }
+  }
+  public void logout(){
+    authenticationProvider.logout();
   }
 }

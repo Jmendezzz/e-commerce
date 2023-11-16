@@ -22,4 +22,9 @@ public class CartRepositoryInMemory implements CartRepository {
   public Cart findByUser(User user) {
     return userCarts.get(user);
   }
+
+  @Override
+  public void deleteByUser(User user) {
+    userCarts.remove(user);
+  }
 }

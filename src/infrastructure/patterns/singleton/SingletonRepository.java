@@ -19,7 +19,7 @@ public class SingletonRepository {
   }
   public static SingletonRepository getInstance(){
     if(singletonRepository == null){
-      return new SingletonRepository();
+      singletonRepository = new SingletonRepository();
     }
     return singletonRepository;
   }

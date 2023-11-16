@@ -4,7 +4,6 @@ import application.ports.in.ProductService;
 import application.ports.out.ProductRepository;
 import domain.models.Product;
 import infrastructure.patterns.singleton.SingletonRepository;
-import infrastructure.patterns.singleton.SingletonService;
 
 import java.util.List;
 import java.util.Optional;
